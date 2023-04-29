@@ -16,22 +16,22 @@ class MainActivity : AppCompatActivity() {
         intent.data = Uri.parse("content://com.android.externalstorage.documents/root/primary")
         try {
             intent.setClassName(
-                "com.google.android.documentsui",
+                "com.android.documentsui",
                 "com.android.documentsui.files.FilesActivity"
             )
-            Log.d(tag,"try to start com.google.android.documentsui")
+            Log.d(tag,"try to start com.android.documentsui")
             startActivity(intent)
         } catch (e: Exception) {
-            Log.i(tag,"fail to start com.google.android.documentsui")
+            Log.i(tag,"fail to start com.android.documentsui")
             try {
                 intent.setClassName(
-                    "com.android.documentsui",
+                    "com.google.android.documentsui",
                     "com.android.documentsui.files.FilesActivity"
                 )
-                Log.d(tag,"try to start com.android.documentsui")
+                Log.d(tag,"try to start com.google.android.documentsui")
                 startActivity(intent)
             } catch (e1: Exception) {
-                Log.i(tag,"fail to start com.android.documentsui")
+                Log.i(tag,"fail to start com.google.android.documentsui")
                 e.addSuppressed(e1);
                 Log.e(tag, e.toString())
             }
